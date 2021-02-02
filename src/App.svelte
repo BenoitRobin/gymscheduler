@@ -1,34 +1,32 @@
+<!-- Mon script -->
+
 <script>
+	import TrainingDay from './components/TrainingDay.svelte';
+
 	export let name;
 </script>
 
-<main class="test">
-	<h1>Hello {name}!</h1>
-	<p class="test-p">Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
+<!-- Mon style -->
 
 <style type="text/scss">
-	.test {
-		text-align: center;
-		padding: 1em;
-		margin: 0 auto;
+.container {
+	text-align: center;
+	padding: 1em;
+	margin: 0 auto;
 
-		&-p {
-			width: 240px;
-			margin: auto;
-		}
-	}
-
-	h1 {
+	&-mainTitle {
 		color: #ff3e00;
 		text-transform: uppercase;
 		font-size: 4em;
 		font-weight: 100;
 	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+}
 </style>
+	
+<!-- Mon code -->
+
+<main class="container">
+	<h1 class="container-mainTitle">{name}</h1>
+
+	<TrainingDay />
+</main>
