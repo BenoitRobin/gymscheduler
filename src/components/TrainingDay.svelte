@@ -21,27 +21,61 @@
 
 <style type="text/scss">
 
+.container {
+    width: 70%;
+    margin: auto;
+    padding: 2em;
+    border: 1px solid #ff3e00;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    &-bloc1 {
+        width: 25%;
+        margin: auto;
+    }
+
+    &-bloc2 {
+        margin-top: 2em;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        &--item {
+            width: 25%;
+            padding: .5em;
+            margin-bottom: 1em;
+            border: 1px solid #000;
+            border-radius: 10px;
+            box-shadow: 5px 5px #243A62;
+        }
+    }
+}
+
 </style>
 	
 <!-- Mon code -->
+<section class="container">
+    <div class="container-bloc1">
+        <form>
+            <select bind:value={nbDaysTrainingsPerWeek}>
+                {#each nbOfDays as day (day.id) }
+                    <option value={day}>{day.text} per week</option>
+                {/each}
+            </select>
+        </form>
+        {JSON.stringify(nbDaysTrainingsPerWeek)}
+    </div>
 
-<div>
-    <form>
-        <select bind:value={nbDaysTrainingsPerWeek}>
-            {#each nbOfDays as day (day.id) }
-                <option value={day}>{day.text} per week</option>
-            {/each}
-        </select>
-    </form>
-    {JSON.stringify(nbDaysTrainingsPerWeek)}
-</div>
-
-{#if nbDaysTrainingsPerWeek}
-<div>
-    {#each nbDaysTrainingsPerWeek.value as dayNumber, i }
-        <div>
-            <TrainingDayDetails title={`day ${++i}`}/>
-        </div>
-    {/each}
-</div>
-{/if}
+    {#if nbDaysTrainingsPerWeek}
+    <div class="container-bloc2">
+        {#each nbDaysTrainingsPerWeek.value as dayNumber, i }
+            <div class="container-bloc2--item">
+                <TrainingDayDetails title={`day ${++i}`}/>
+            </div>
+        {/each}
+    </div>
+    {/if}
+</section>
