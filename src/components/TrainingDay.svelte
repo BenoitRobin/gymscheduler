@@ -1,6 +1,9 @@
 <!-- Mon script -->
 
 <script>
+
+    import TrainingDayDetails from './TrainingDayDetails.svelte';
+
 	const nbOfDays = [
         {id: 1, text:'One day', value:[1]},
         {id: 2, text:'Two days', value:[1, 2]},
@@ -32,3 +35,13 @@
     </form>
     {JSON.stringify(nbDaysTrainingsPerWeek)}
 </div>
+
+{#if nbDaysTrainingsPerWeek}
+<div>
+    {#each nbDaysTrainingsPerWeek.value as dayNumber, i }
+        <div>
+            <TrainingDayDetails title={`day ${++i}`}/>
+        </div>
+    {/each}
+</div>
+{/if}
