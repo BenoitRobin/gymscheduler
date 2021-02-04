@@ -15,7 +15,7 @@
 	margin: 0 auto;
 
 	&-mainTitle {
-		color: #ff3e00;
+		color: #bde0ff;
 		text-transform: uppercase;
 		font-size: 4em;
 		font-weight: 100;

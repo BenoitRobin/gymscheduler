@@ -23,9 +23,10 @@
 
 .container {
     width: 70%;
+    background: #d4e3eb;
     margin: auto;
     padding: 2em;
-    border: 1px solid #ff3e00;
+    border: 1px solid #bde0ff;
     border-radius: 10px;
 
     display: flex;
@@ -47,13 +48,18 @@
             width: 25%;
             padding: .5em;
             margin-bottom: 1em;
-            border: 1px solid #000;
+            border: 1px solid #dcdcdc;
             border-radius: 10px;
-            box-shadow: 5px 5px #243A62;
+            box-shadow: 3px 3px 3px #243A62;
+            background-color: #bde0ff;
         }
     }
 }
 
+select {
+    border-radius: 5px;
+    margin-top: .5em
+}
 </style>
 	
 <!-- Mon code -->
